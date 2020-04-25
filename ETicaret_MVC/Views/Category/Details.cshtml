@@ -1,0 +1,25 @@
+﻿@model ETicaret_MVC.Entities.Category
+
+@{
+    ViewBag.Title = "Details";
+}
+<div class="container pb-5">
+    <div>
+        <h2>Details</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+
+        </dl>
+    </div>
+    <p>
+        @Html.ActionLink("Kaydet", "Edit", new { id = Model.Id }, new { @class = "btn btn-secondary" })
+        @Html.ActionLink("Kategori Listesine dön", "Index", null, new {@class="btn btn-warning"})
+    </p>
+</div>

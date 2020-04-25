@@ -1,0 +1,18 @@
+﻿@using ETicaret_MVC.Models;
+@model IEnumerable<ProductModel>
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<div class="jumbotron jumbotron-fluid ">
+    <div class="container">
+        <h6 class="display-4">Butiğimize hoşgeldiniz. =) </h6>
+        <p class="lead">Sınırlı sayıda üretilmiş özel tasarım kıyafetlerimizle sizde kendinizi şımartın.</p>
+    </div>
+</div>
+
+<div class="container mb-5">
+    @Html.Partial("_ProductList", Model)
+
+</div>
+

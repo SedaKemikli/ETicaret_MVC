@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ETicaret_MVC.Entities.Category>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<div class="container mb-5">
+    <h2>Kategoriler</h2>
+    <hr/>
+    <p>
+        @Html.ActionLink("Kategori Ekle", "Create", null, new { @class = "btn btn-secondary fas fa-plus-circle" })
+    </p>
+    <hr/>
+    <table class="table table-bordered table-dark bg-success">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th style="width:200px"></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Name)
+                </td>
+                <td>
+                    @Html.ActionLink("Güncelle", "Edit", new { id = item.Id }, new { @class = "btn btn-dark far fa-edit" })
+                    @Html.ActionLink("Sil", "Delete", new { id = item.Id }, new { @class = "btn btn-warning far fa-trash-alt" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

@@ -1,0 +1,40 @@
+﻿@model ETicaret_MVC.Entities.Product
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<div class="container pb-5">
+    <div>
+        <hr />
+        <h2>Ürünü silmek istediğinize emin misiniz?</h2>
+        <hr />
+        <dl class="dl-horizontal">
+            @*<dt>
+                @Html.DisplayNameFor(model => model.Image)
+            </dt>
+
+            <dd>
+                <img src="/Upload/model.Image" width="80" />
+            </dd>*@
+            <dt>
+                @Html.DisplayNameFor(model => model.Name)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.Name)
+            </dd>
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Sil" class="btn btn-danger far fa-trash-alt" />
+                @Html.ActionLink("Ürün Listesine dön", "Index", null, new{@class= "btn btn-warning fas fa-angle-double-left" })
+            </div>
+        }
+    </div>
+</div>

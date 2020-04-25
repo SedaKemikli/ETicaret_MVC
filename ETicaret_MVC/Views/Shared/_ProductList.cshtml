@@ -1,0 +1,29 @@
+﻿@using ETicaret_MVC.Models;
+@model IEnumerable<ProductModel>
+<div class="row">
+
+    @foreach (var product in Model)
+    {
+        <div class="col-md-4">
+            <div class="card">
+                <img src="~/Upload/@product.Image" class="card-img-top  w-100 h-75" alt="@product.Name">
+                <div class="card-body">
+                    <h5 class="card-title">
+                        <a href="/Home/Details/@product.Id">
+                            @product.Name
+                        </a>
+                    </h5>
+                    <p class="card-text pt-2">@product.Description</p>
+                </div>
+                <div class="card-footer">
+                    <medium class="text-dark">@product.Price TL</medium> 
+                    <a href="/Home/Details/@product.Id" class="btn btn-primary btn-sm float-right">
+                        <i class="fas fa-search"></i>
+                        Ürünü incele
+                    </a>
+                </div>
+            </div>
+        </div>
+    }
+
+</div>

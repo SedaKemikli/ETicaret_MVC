@@ -1,0 +1,29 @@
+﻿@model ETicaret_MVC.Models.IndexViewModel
+@{
+    ViewBag.Title = "Şifre Ayarları";
+}
+<div class="container">
+    <h2>@ViewBag.Title</h2>
+
+    <p class="text-success">@ViewBag.StatusMessage</p>
+    <div>
+
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>Şifre</dt>
+            <dd>
+                [
+                @if (Model.HasPassword)
+                {
+                    @Html.ActionLink("Şifre Değiştir", "ChangePassword")
+                }
+                else
+                {
+                    @Html.ActionLink("Şifre Oluştur", "SetPassword")
+                }
+                ]
+            </dd>
+
+        </dl>
+    </div>
+</div>
